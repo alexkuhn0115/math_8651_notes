@@ -1,0 +1,87 @@
+---
+title: "MATH 8651 - Key Content"
+output: html_notebook
+---
+
+Note Set 1:
+
+  * Definition of probability space, probability measure, sigma-field
+  * Definition of measurable function, random variable from $(\Omega, \mathcal{F}, P)$ to $(\Psi, \mathcal{G})$. 
+  * Proposition 2.1: only need preimage of sets that generate a sigma-field to be measurable for a function to be measurable. 
+  * Corollary 1: A continuous function between topological spaces is measurable. 
+  * A random variable $X: (\Omega, \mathcal{F}, P) \rightarrow (\Psi, \mathcal{G})$ induces a probability measure $Q$ on $(\Psi, \mathcal{G})$ by setting $Q(B) = P(X^{-1}(B))$ for all $B\in \mathcal{G}$. We call $Q$ the distribution of $X$. 
+  * Equal almost surely. 
+  * Proposition 2.2: The limit of an increasing sequence of measurable $\overline{\mathbb{R}}$-valued functions defined on a common measurable space has a measurable limit. 
+  * Corollary 1: For a sequence (does not need to be increasing) of measurable $\overline{\mathbb{R}}$-valued functions defined on a common measurable space, the following are measurable: $\sup_n X_n,\: \inf_n X_n, \: \lim\sup_{n\rightarrow\infty} X_n, \: \lim\inf_{n \rightarrow \infty} X_n$. Furthermore, if $\lim_{n \rightarrow \infty} X_n$ exists, it is measurable. 
+  * Definition of a simple function. 
+  * Corollary 2: Characterization of $\overline{\mathbb{R}}^+$-valued measurable functions as limits of simple functions.
+  
+Note set 2: 
+
+  * Definition of a distribution function (not to be confused with a distribution).
+  * Proposition 3.1: Continuity of measure for countable nested sequence of measurable sets. 
+  * Proposition 3.2: Let $Q$ be a p.m. on $(\mathbb{R}, \mathcal{B})$. Then, $F(x) := Q((-\infty, x])$ is a distribution function. 
+  * Proposition 3.3: Let $F$ be a distribution function. There exists a unique p.m. $Q$ on $(\mathbb{R}, \mathcal{B})$ such that $Q((-\infty, x]) = F(x)$ for all $x$. So together with Prop 3.2 this fully characterizes the probability measure by the distribution function. 
+  * Examples of common distribution functions given. 
+  * Definition of a density.
+  * Define expectation of a random variable (for simple functions). Linearity of expectation; expectation of positive RV is positive.
+  * Corollary 1: For simple functions (and later in general) $X \leq Y \implies E(X) \leq E(Y)$.
+  * Let $X$ be a $\overline{\mathbb{R}}^+$-valued RV on p.s. $(\Omega, \mathcal{F}, P)$. Set $E(X) := \sup_Z E(Z)$ for all simple nonnegative RVs $Z$ with $Z \leq X$. Extend to $X$ with values in $\overline{\mathbb{R}}$ with $E(X) := E(X^+) - E(X^-)$; does not exist if both terms infinite. 
+  * **Theorem 4.1 (Monotone Convergence)**: Let $X_1,X_2,...$ be an _increasing_ sequence of $\overline{\mathbb{R}}^+$ valued RVs on a common p.s. $(\Omega, \mathcal{F}, P)$, and set $X = \lim_{n \rightarrow \infty} X_n$. Then $E(X) = \lim_{n \rightarrow \infty} E(X_n)$. 
+  * Corollary 1: Expectation of countable sum is the sum of expectations. 
+  * Corollary 2: For $X_1,X_2,...$ be an _increasing_ sequence of $\overline{\mathbb{R}}$ (not necessarily positive), with same setup as MCT otherwise, if $E(X_1) > -\infty$ then $E(X_n) \rightarrow E(X)$ as $n \rightarrow \infty$. 
+  * Proposition 4.1: For the reasonable setup, $E_P[\varphi \circ X] = E_Q[\phi]$. 
+  * Corollary 1: $E[X] = \int_{-\infty}^{\infty} x F(dx)$, where $F(dx) = dF(x)$ is equal to $f(x)dx$ if the density exists. When $X \geq 0$, $E[X] = \int_{0}^{\infty} [1 - F(x)]dx$. 
+  * Define variance, standard deviation, comp. form of variance. 
+  * **Proposition 5.1 (Chebyshev Inequality):** Suppose $X$ is an $\overline{\mathbb{R}}$-valued RV with finite mean, $\mu$, and variance $\sigma^2$. Then, for all $z > 0$, \[P(\{\omega: |X(\omega) - \mu| \geq z\}) \leq \sigma^2/z^2\]. 
+  * Markov inequality: Let $Y$ be an $\mathbb{R}$-valued RV, and let $f$ be an $\mathbb{R}^+$-valued function which is increasing on some interval $J \subset \mathbb{R}$ containing the support of $Y$. Then, for all $z\in J$ such that $f(z) > 0$, \[P(\{\omega \: : \: Y(\omega) \geq z\}) \leq E(f \circ Y)/f(z).\]
+  * Proposition 5.2 (Cauchy-Schwarz Inequality): Assume that $E(X^2), E(Y^2) < \infty$. Then $E(XY)$ exists and \[[E(XY)]^2 \leq E(X^2)E(Y^2),\] and equality holds iff one of the RVs $X$ or $Y$ a.s. equals a constant multiple of the other. 
+  * Define independence for sets, pairwise independence (events pairwise independent $\nRightarrow$ independence), random variables.
+  * Definition and properties of covariance, correlation. 
+  * **Theorem 5.1 (Weak Law of Large Numbers):** Let $X_1, X_2,...$ be $\overline{\mathbb{R}}$ valued RVs, defined on a common probability space $(\Omega, \mathcal{F}, P)$. Assume they have the same distribution, with finite mean $\mu$ and variance $\sigma^2$. Also assume each pair is uncorrelated, or has negative correlation. Then, for each $\varepsilon > 0$, \[\lim_{n \rightarrow \infty} P\left(\left\{\omega \: : \: \left| \frac{S_n(\omega)}{n} - \mu\right| > \varepsilon\right\}\right) = 0,\] where $S_n(\omega) = \sum_{k = 1}^n X_k(\omega)$.  
+  * Define convex function in two ways. 
+  * Proposition 5.3 (Jensen Inequality): Let $X$ be a RV with finite mean. Let $\varphi$ be an $\mathbb{R}$-valued function which is convex on the interval $J$, which supports $X$. Then, $\varphi(E[X]) \leq E[\varphi \circ X]$. 
+  
+
+Note set 3: 
+
+  * Introduce notion of limit of a set (via indicator functions).
+  * Useful characterizations (these always exist) for subsets of $\Omega$ $A_1, A_2, ...$ we have 
+      
+      * the points that are in infinately many $A_n$: \[\limsup_{n \rightarrow \infty} = \bigcap_{n = 1}^{\infty} \bigcup_{m = n}^{\infty}A_m,\]
+      * the points that will eventually be in all $A_n$: \[\liminf_{n \rightarrow \infty} A_n = \bigcup_{n = 1}^{\infty}\bigcap_{m=n}^{\infty}A_m.\]
+      
+  * **Lemma 6.1 (Borel-Cantelli):**  Let $A_1, A_2,...$ be a sequence of events on a common p.s. $(\Omega, \mathcal{F}, P)$, and set $A = \limsup_{n \rightarrow \infty}A_n$. 
+  
+    (a) If $\sum_{n = 1}^{\infty}P(A_n) < \infty,$ then $P(A) = 0$ (this is generally the more useful one).
+    (b) If $\sum_{n = 1}^{\infty}P(A_n) = \infty$ and $A_n$ are independent, then $P(A) = 1$. 
+    
+  * Define finite measure, infinite measure, $\sigma$-finite measure. 
+  * Define Sierpinski class, give related propositions for characterizing $\sigma$-field with Sierpinski class. 
+  * **Theorem 7.1 (Uniqueness of Measure)**: Let $P$ and $Q$ be p.m. on the m.s $(\Omega, \sigma(\mathcal{E}))$, where $\mathcal{E}$ is a collection of sets closed under pairwise intersections. If $P(A) = Q(A)$ for all $A \in \mathcal{E}$ then $P = Q$. 
+  
+    * Important application: Let $F$ be a distribution function. Let $\mathcal{E}$ be the collection of all intervals $A_n = (a_n, b_n]$. Note that $\mathcal{E}$ is closed under pairwise intersections. If $Q((-\infty, x]) = F(x)$, then one must have $Q(A_n) = F(b_n) - F(a_n)$. It follows from Theorem 7.1 that there exists at most one p.m. $Q$ on $(\mathbb{R}, \mathcal{B})$ with these values. 
+    
+  * **Theorem 7.2 (Existence of Measure):**  Let $\mathcal{E}$ be a field (not $\sigma$-field) of subsets of a space $\Omega$, and $R$ a nonnegative finitely additive function defined on $\mathcal{E}$ such that $R(\Omega) = 1,$ and $R(A_n) \rightarrow 0$ as $n \rightarrow \infty$. 
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
