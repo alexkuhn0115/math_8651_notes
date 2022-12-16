@@ -183,6 +183,19 @@ output: html_notebook
   * Proposition 14.2: Suppose that $X_n \rightarrow c$ in distribution as $n\rightarrow\infty$, where $c\in\mathbb{R}$. Then $X \rightarrow c$ i.p. (but not necessarily a.s.). 
   * Proposition 14.3: If $X_n \rightarrow X$ in distribution, then there exists a p.s. $(\Omega, \mathcal{F}, P)$ and RVs $X_n', n = 1,2,...$ and $X'$ defined on $(\Omega, \mathcal{F}, P)$ and having the same distribution functions as $X_n$ and $X$ such that $X_n' \rightarrow X'$ a.s. as $n\rightarrow\infty$. 
   * Proposition 14.4: The sequence of distribution functions $F_n$ converge weakly to $F$ iff for each bounded, continuous function $g$ on $\mathbb{R}$, \[\lim_{n\rightarrow\infty}\int_{-\infty}^{\infty}g(x)F_n(dx) = \int_{-\infty}^{\infty}g(x)F(dx).\]
+  * Proposition 14.5 (Helly Selection Principle): Let $F_n(x), \: n = 1,2,...$ be a sequence of distribution functions. Then there exists a subsequence $F_{n_k}(x)$ and an increasing right continuous function $F(x)$ with $\lim_{x\rightarrow -\infty}F(x) \geq 0$ and $\lim_{x\rightarrow\infty}F(x) = 1$, such that for all $x \in C_F,$ \[\lim_{k\rightarrow\infty}F_{n_k}(x) = F(x).\]
+  
+    * Note: This mean $F_n(x), \: n=1,2,...$ has a "limit", but this need not be a distribution function. Need the sequence to be tight in order to get a distribution function (see below). 
+    
+  * Definition: A collection of measures $\{\mu_{\alpha}\}$ (or $F_{\alpha}(x)$) is **tight** if for every $\varepsilon > 0$, there exists a _finite_ interval $I$ s.t. \[\inf_{\alpha}\mu_{\alpha}(I) > 1 - \varepsilon.\]
+  * Proposition 14.6: Every limit $F(x)$ in Proposition 14.5 is a distribution function iff $\{F_n(x)\}$ is tight.
+  * Definition: The family of functions $f_{\alpha}: \mathbb{R} \rightarrow \mathbb{R}$ is **equicontinuous** if for every $\varepsilon > 0$, there exists a $\delta > 0$ s.t. for $|x_2 - x_1| < \delta$ and any $\alpha$, then $|f_{\alpha}(x_2) - f_{\alpha}(x_1)| < \varepsilon$. 
+  * **Theorem 14.1 (Levy-Cramer Convergence Theorem):** 
+  
+    (i) Let $F_n, \: n = 1,2,...$ and $F_{\infty}$ be distribution functions with characteristic functions $\varphi_n, \: n = 1,2,...$ and $\varphi_{\infty}$. If $F_n$ converges weakly to $F$, then $\varphi_n(t) \rightarrow \varphi_{\infty}(t)$ uniformly in every finite interval. Furthermore $\{\varphi_n\}$ is equicontinuous. 
+    (ii) (More useful) Let $F_n, \: n = 1,2,...$ be distribution functions with CFs $\varphi_n, \: n = 1,2,...$. Suppose that (a) $\lim_{n \rightarrow\infty}\varphi_n(t) = \varphi_{\infty}(t)$ for all $t$ for some function $\varphi_{\infty}$ (not necessarily a CF yet) and (b) $\varphi_{\infty}$ is continuous at 0. Then, (a') $F_n$ converges weakly to $F_{\infty}$ for some distribution function $F_{\infty}$, and (b') $\varphi_{\infty}$ is the CF of $F_{\infty}$. 
+  
+  * Next...
   
   
   
