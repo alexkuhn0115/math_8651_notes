@@ -3,7 +3,7 @@ title: "MATH 8651 - Key Content"
 output: html_notebook
 ---
 
-Note Set 1:
+### Note Set 1:
 
   * Definition of probability space, probability measure, sigma-field
   * Definition of measurable function, random variable from $(\Omega, \mathcal{F}, P)$ to $(\Psi, \mathcal{G})$. 
@@ -16,7 +16,7 @@ Note Set 1:
   * Definition of a simple function. 
   * Corollary 2: Characterization of $\overline{\mathbb{R}}^+$-valued measurable functions as limits of simple functions.
   
-Note set 2: 
+### Note set 2: 
 
   * Definition of a distribution function (not to be confused with a distribution).
   * Proposition 3.1: Continuity of measure for countable nested sequence of measurable sets. 
@@ -43,7 +43,7 @@ Note set 2:
   * Proposition 5.3 (Jensen Inequality): Let $X$ be a RV with finite mean. Let $\varphi$ be an $\mathbb{R}$-valued function which is convex on the interval $J$, which supports $X$. Then, $\varphi(E[X]) \leq E[\varphi \circ X]$. 
   
 
-Note set 3: 
+### Note set 3: 
 
   * Introduce notion of limit of a set (via indicator functions).
   * Useful characterizations (these always exist) for subsets of $\Omega$ $A_1, A_2, ...$ we have 
@@ -57,21 +57,132 @@ Note set 3:
     (b) If $\sum_{n = 1}^{\infty}P(A_n) = \infty$ and $A_n$ are independent, then $P(A) = 1$. 
     
   * Define finite measure, infinite measure, $\sigma$-finite measure. 
-  * Define Sierpinski class, give related propositions for characterizing $\sigma$-field with Sierpinski class. 
+  * Define Sierpinski class.
+  * Proposition 7.1 (Sierpinski class): With correct setup, the smallest Sierpinksi class of subsets of $\Omega$ that contains $\mathcal{E}$ equals $\sigma(\mathcal{E})$. 
+  * Lemma 7.2: A Sierpinski class of subsets of $\Omega$ which is closed under finite intersections and contains $\Omega$ is a $\sigma$-field. 
   * **Theorem 7.1 (Uniqueness of Measure)**: Let $P$ and $Q$ be p.m. on the m.s $(\Omega, \sigma(\mathcal{E}))$, where $\mathcal{E}$ is a collection of sets closed under pairwise intersections. If $P(A) = Q(A)$ for all $A \in \mathcal{E}$ then $P = Q$. 
   
     * Important application: Let $F$ be a distribution function. Let $\mathcal{E}$ be the collection of all intervals $A_n = (a_n, b_n]$. Note that $\mathcal{E}$ is closed under pairwise intersections. If $Q((-\infty, x]) = F(x)$, then one must have $Q(A_n) = F(b_n) - F(a_n)$. It follows from Theorem 7.1 that there exists at most one p.m. $Q$ on $(\mathbb{R}, \mathcal{B})$ with these values. 
     
-  * **Theorem 7.2 (Existence of Measure):**  Let $\mathcal{E}$ be a field (not $\sigma$-field) of subsets of a space $\Omega$, and $R$ a nonnegative finitely additive function defined on $\mathcal{E}$ such that $R(\Omega) = 1,$ and $R(A_n) \rightarrow 0$ as $n \rightarrow \infty$. 
+  * **Theorem 7.2 (Existence of Measure):**  Let $\mathcal{E}$ be a field (not $\sigma$-field) of subsets of a space $\Omega$, and $R$ a nonnegative finitely additive function defined on $\mathcal{E}$ such that $R(\Omega) = 1,$ and $R(A_n) \rightarrow 0$ as $n \rightarrow \infty$ as $n \rightarrow \infty$ for each decreasing sequence $A_1,A_2,...$ in $\mathcal{E}$ for which $\cap_n A_n = \emptyset$. Then there exists a p.m. $P$ defined on $\sigma(\mathcal{E})$ with $P(A) = R(A)$ for every $A \in \mathcal{E}$. 
+  * Lemma 7.3: Let $R$ be a nonnegative _finitely_ additive function on a field $\mathcal{E}$ of subsets of $\Omega$ with $R(\Omega) = 1$. Then $R$ is countably additive on $\mathcal{E}$ if $R(A_n) \rightarrow 0$ for every decreasing sequence $(A_1,A_2,...)$ in $\mathcal{E}$ for which $\cap_n A_n = \emptyset$.  
+  * Proposition 7.2: Let $\mathcal{E}$ be a field of subsets of $\Omega$ and $R$ a nonnegative _countably_ additive function on $\mathcal{E}$ with $R(\Omega) = 1$. Then there exists a p.m. $P$ defined on $\sigma(\mathcal{E})$ with $P(A) = R(A)$ for all $A \in \mathcal{E}$. 
   
-  
+    * Importantly: Lemma 7.3 allows us to reduce Theorem 7.2 to Proposition 7.2. 
+  * Definition of completeness (other given in HW), and the completion of a $\sigma$-field, and a probability. 
+  * Example that $([0,1], \mathcal{B}, \lambda)$ is not complete. Example that the completion of $\mathcal{B}$ here still does not contain all subsets of $(0,1])$. So in a very standard setting there are ways to arrive at undefined probabilities!
 
+### Note set 4: 
+
+  * Define integral of an extended real-valued measurable function $f$ on general measure space $(\Omega, \mathcal{F}, \mu)$. 
+  * **Theorem 8.1 (Monotone Convergence):** Let $0 \leq f_1 \leq f_2 \leq ...$ be $\overline{\mathbb{R}}^+$ valued measurable functions on a m.s. $(\Omega, \mathcal{F}, \mu)$ and set $f = \lim_{n \rightarrow \infty} f_n$. Then \[\int f d\mu = \lim_{n \rightarrow \infty} \int f_n d\mu.\]
+* **Lemma 8 (Fatou's Lemma):** Let $f_1, f_2,...$ be a sequence (doesn't need to be increasing) of $\overline{\mathbb{R}}^+$ valued measurble functions on m.s. $(\Omega, \mathcal{F}, \mu)$. Then, \[\int \liminf_{{n \rightarrow \infty}}f_n d\mu \leq  \liminf_{{n \rightarrow \infty}}\int f_n d\mu.\]
+* **Theorem 8.2 (Dominated Convergence):** Let $f_1, f_2,...$ be a sequence (doesn't need to be increasing) of $\overline{\mathbb{R}}$ (no longer require positive values) valued measurable functions on m.s. $(\Omega, \mathcal{F}, \mu)$, and suppose $g \geq 0$ is a measurable function on the same m.s. with $|f_n| \leq g$ a.e. and $\int g d\mu < \infty$, and that $f = \lim_{n \rightarrow \infty} f_n$ exists a.e.. Then, $\int |f|d\mu < \infty$ and \[\int f d\mu = \lim_{n \rightarrow \infty} \int f_n d\mu.\]
+
+  * Special case of DCT called **bounded convergence theorem** when $\mu(\Omega) < \infty$ and $g(\omega) \equiv M < \infty$ for some constant $M$. 
   
+* Define a function to be **uniformly integrable** if \[\lim_{c \rightarrow \infty}\left(\sup_{t \in T} \int_{|f_t| \geq c} |f_t| d\mu\right) = 0. \]
+* **Theorem 8.3 (Uniform Integrability Criterion)**: Let $f_1, f_2,...$ be a sequence (note this can be extended to a sequence over an arbitrary set) of $\overline{\mathbb{R}}$ valued measurable functions on m.s. $(\Omega, \mathcal{F}, \mu)$, where $\mu(\Omega) < \infty$ (this wasn't required for the others). Assume $f = \lim_{n\rightarrow\infty} f_n$ exists a.e. and $\int |f_n| d\mu < \infty$ for all $n$. The following statements are equivalent:
+
+  (i) $f_1, f_2,...$ are uniformly integrable.
+  (ii) $\int |f| d\mu < \infty$ and $\lim_{n \rightarrow \infty}\int |f_n - f|d\mu = 0$ (i.e. the sequence converges in the $L_1$ norm).
+  (iii) $\lim_{n\rightarrow\infty}\int |f_n| d\mu = \int |f|d\mu < \infty$.
+  (iv) Each of the above (i)-(iii) imply $\lim_{n\rightarrow\infty}\int f_n d\mu = \int f d\mu$. 
+
+* Define absolute continuity w.r.t some measure $\mu$. For two measures on same p.s. $\nu << \mu$ if $\mu(A) = 0$ implies $\nu(A) = 0$ for $A \in \mathcal{F}$. 
+* Proposition 8.1 is converse of the following. 
+* **Theorem 8.2 (Radon-Nykodym):** Let $\mu$ and $\nu$ be $\sigma$-finite measures defined on a common m.s. and satisfying $\nu << \mu$. Then there exists an $\mathbb{R}^+$ measurable function $f$ s.t. \[\nu(A) = \int_A f d\mu, \text{ for all } A \in \mathcal{F}.\] We call $f$ the R-N derivative, or density, of $\nu$ w.r.t. $\mu$. 
+* Define independence for $\sigma$ fields.
+* Define $\sigma$-field generated by a RV $X$. Characterize independence of $\sigma$-fields via independence of RVs. 
+* Define measurable rectangles, product $\sigma$-field, product of measurable spaces. 
+* Proposition 9.1: For two $\sigma$-finite m.s., there exists a unique measure $\mu$ on the product of measurable spaces such that $\mu(A_1 \times A_2) = \mu_1(A_1)\mu_2(A_2)$ for all $A_i \in \mathcal{F_i}, \: i = 1,2$. Also, $\mu$ is $\sigma$-finite, and is a p.m. if $\mu_1, \mu_2$ are p.m.s. 
+* Call $\mu$ above the product measure. Define product space. 
+* Extending some results to arbitrary product measures (i.e. infinite products). 
+* **Theorem 9.1 (Weaker version of Kolmogorov Extension Theorem):** Let $(\Omega_n, \mathcal{F}_n, \mu_n)$ for $n = 1,2,...$ be a sequence of p.s.. Let $\Omega = \otimes_{n = 1}^{\infty}\Omega_n$ and $\mathcal{F} = \otimes_{n = 1}^{\infty}\mathcal{F}_n$. Then there exists a unique p.m. $P$ on $(\Omega, \mathcal{F})$ such that \[P\left(\bigotimes_{n = 1}^{\infty}A_n\right) = \prod_{n = 1}^{\infty}P_n(A_n),\] for events $A_n \in \mathcal{F}_n,\: n = 1, 2,...$ 
+
+  * Note: Resulting $\Omega$ needs to be a p.s. if $\Omega$ is to be $\sigma$-finite. 
+  * Note: Can extend to arbitrary (not just countable) products. 
   
+* Proposition 9.2: If $\varphi$ is a measurable function from a product measurable space to a measurable space, then the "slice" function is measurable when one variable is fixed. 
+* **Theorem 9.2 (Fubini):** Let $(\Psi, \mathcal{G}, \mu)$ and $(\Theta, \mathcal{H}, \nu)$ be two $\sigma$-finite measure spaces, and let $\varphi$ be an $\overline{\mathbb{R}}$ valued measurable function defined on the product measure space $(\Psi, \mathcal{G}, \mu) \times (\Theta, \mathcal{H}, \nu)$. If $\int_{\Psi \times \Theta}\varphi(x,y)d(\mu\times\nu)$ exists, then $x \mapsto \int_{\Theta} \varphi(x,y) \nu(dy)$ is a $\mu$-almost everywhere defined measurable function from $(\Psi, \mathcal{G}, \mu)$ to $\overline{\mathbb{R}}$, and \[\int_{\Psi \times \Theta} \varphi(x,y) d(\mu \times \nu) = \int_{\Psi}\left(\int_{\Theta}\varphi(x,y)\nu(dy)\right)\mu(dx).\]
+
+  * Note: If $\varphi$ is $\overline{\mathbb{R}}^+$ valued, then the integral on the product space always exists. 
+* **Proposition 9.3:** Let $X$ and $Y$ be independent $\overline{\mathbb{R}}$ valued RVs with finite expectations. Then $E(XY) = E(X)E(Y)$. 
+* One can show usual product of densities characterization of independence for RVs. 
+
+### Note set 5: 
+
+  * Definition: Let $Y_1, Y_2, ...; Y$ be real valued RVs. Then $Y_n \rightarrow Y$ **in probability** as $n \rightarrow \infty$ if, for each $\varepsilon > 0$, \[\lim_{n\rightarrow\infty}P(\{\omega: |Y_n(\omega) - Y(\omega)| > \varepsilon\}) = 0 \text{ (i.p)}.\]
+  * Definition: With same conditions, $Y_n \rightarrow Y$ **almost surely** as $n \rightarrow \infty$ if, \[P(\{\omega: \lim_{n\rightarrow\infty}Y_n(\omega) = Y(\omega)\}) = 1.\] (See notes for version with $\varepsilon$.)
+
+* Proposition 12.1: If $Y$'s above defined on same p.s. then almost sure convergence implies convergence in probability. 
+* Proposition 12.2: Same setup as above. If $Y_n$ converges in probability to $Y$, then there exists a subsequence $n_1, n_2,...$ so that $Y_{n_k} \rightarrow Y$ a.s.
+* For measure spaces, use the term convergence in measure rather than i.p. 
+* Proposition 12.3 (DCT): Restated for general measure space. If $f_n \rightarrow f$ in measure, plus the usual conditions, then can push the limit through the integral. 
+* **Theorem 12.1 (Cantelli SLLN):** Let $X_1, X_2, ...$ be independent $\overline{\mathbb{R}}$ valued RVs on a p.s. $(\Omega, \mathcal{F}, P)$ satisfying $E(X_k) = \mu, \: E(X_k^4) \leq M < \infty$. Set $S_n = \sum_{k=1}^nX_k$. Then, \[\frac{S_n}{n}\rightarrow \mu \:\: \text{a.s.}\]
+* Example of an application of Cantelli SLLN to prove Borel's theorem, i.e. almost all numbers on unit interval are simply normal. 
+* **Theorem 12.2 (Kolmogorov SLLN):** Let $X_1, X_2,...$ be a sequence of IID (so adding identically distributed to requirements here) $\mathbb{R}$ valued RVs. 
+
+  (a) If $E(|X_1|) < \infty$, then $S_n/n \rightarrow E(X_1)$ a.s.
+  (b) If $E(|X_1|) = \infty$, then $\limsup_{n\rightarrow\infty}|S_n|/n = \infty$ a.s. 
   
+  * Note: If $X_1, X_2, ...$ are independent (not necessarily identically distributed) RVs with mean $\mu$ and $\sum_{n = 1}^{\infty} \text{Var}(X_n/n) < \infty$, then $S_n/n \rightarrow \mu$ a.s. (did not prove this though.)
   
+* **Theorem 12.3 ("Grand-daddy" WLLN):** Let $X_1, X_2,...$ be a sequence of independent $\mathbb{R}$ valued RVs on a common p.s., with distribution functions $F_n$. Let $b_1, b_2,...$ be a sequence of real numbers that are increasing to $\infty$. Suppose (i) \[\lim_{n\rightarrow\infty}\sum_{k = 1}^{n}\int_{|x| > b_n}dF_k(x) = 0,\] and (ii) \[\lim_{n\rightarrow\infty}\frac{1}{b_n^2}\sum_{k=1}^n\int_{|x|\leq b_n}x^2 dF_k(x) = 0.\] Set $a_n = \sum_{k=1}^n\int_{|x|\leq b_n} xdF_k(x)$. Then, \[\frac{1}{b_n}(S_n - a_n) \rightarrow 0 \: \text{ i.p.}.\]
+* The above conditions (i) and (ii) are also necessary in the following sense: Suppose there exists $x_0$ and a $\lambda > 0$ such that for all $k$, \[P(X_k \geq x_0) \geq \lambda, \: \: P(X_k \leq x_0) \geq \lambda.\] Then $\frac{1}{b_n}(S_n - a_n) \rightarrow 0 \: \text{ i.p.}$ implies (i) and (ii) above. 
+
+* Example given with the above showing that WLLN can hold even if $E(|X_1|) = \infty$. 
+* Define empirical distribution function.
+* **Theorem 12.4 (Glivenko-Cantelli):** Let $X_1, X_2, ...$ bet IID $\mathbb{R}$ valued RVs on a common p.s., with distribution function $F$. Then, \[\lim_{k\rightarrow\infty}\sup_{x\in\mathbb{R}}|F_k(x, \omega) - F(x)| = 0 \: \text{ a.s. (in } \Omega).\]
+* Intro to renewal theory, Proposition 12.4 gives strong law statement for number of renewals.
+* Proposition 12.5: under same setup as above, $\lim_{n\rightarrow\infty}E[N(t)]/t = 1/m$. 
+* General useful result: If $X_t \rightarrow X$ a.s. and for all $t$, $E(X_t^2) \leq M < \infty$, then $E(|X_t - X|) \rightarrow 0$ as $t \rightarrow \infty$. 
+* Lemma for expectation of square of renewals. 
+* Define convolution, Proposition 10.1 which gives convenient integral for convolutions. 
+
+### Note set 6: 
+
+  * Define the characteristic function of a real valued RV $X$ to be $\varphi(t) = E[e^{itX}], \: t\in\mathbb{R}$. Note: $E[e^{itX}] = E[\cos(tX)] + iE[\sin(tX)]$.  
+  * Define related Laplace transform, MGF, and generating function. 
+  * List properties of CFs, and give some common examples (include here?). 
+  * Uniqueness: If $\varphi_{X_1}(t) = \varphi_{X_2}(t)$ for all $t$, then $X_1, X_2$ have the same distribution. 
+  * **Theorem 13.1 (Inversion Theorem):** If $x_1 < x_2$, then \[\mu((x_1,x_2)) + \frac{1}{2}\mu(\{x_1\}) + \frac{1}{2}\mu(\{x_2\}) = \lim_{T\rightarrow\infty}\frac{1}{2\pi}\int_{-T}^T \frac{e^{-itx_1} - e^{-itx_2}}{it}\varphi(t)dt.\]
+  * Useful facts related to CFs in proof, e.g. $|e^{itX}| = 1$, and the integral trick. 
+  * Corollary 1: If two distribution functions have the same characteristic function, they are equal. 
+  * Corollary 2: A RV $X$ has real-valued CF iff $X$ is symmetric. 
+  * Corollary 3: If $\int_{-\infty}^{\infty}|\varphi(t)|dt < \infty,$ then $F$ is continuously differentiable and \[F'(x) = f(x) = \frac{1}{2\pi}\int_{-\infty}^{\infty}e^{-itx}\varphi(t)dt.\]
   
+    * Other result 1: for all $x$, \[\lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^T e^{-itx}\varphi(t)dt = \mu(\{x\}).\]
+    * Other result 2: for all $x$, \[\lim_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^T |\varphi(t)|^2dt = \sum_{x\in D}\mu(\{x\})^2,\] where $D$ is the set of points $\{x: \: \mu \text{ is discontinuous at } x\}$, i.e. points that have mass. 
+    * Periodic version of 1: \[\frac{1}{2\pi}\int_{-\pi}^{\pi} e^{-itx}\varphi(t)dt = \mu(\{x\}).\]
+    
+  * Define the $r$th absolute moment, $\mu_F^{(r)}$ and $r$th moment, $m^{(r)}_F$ of $F$. 
+  * Proposition 13.2: If $\mu_F^{(n)} < \infty$ for a given $n \in \mathbb{Z}^+$, then $\varphi(t)$ has a continuous derivative of order $n$ given by \[\varphi^{(n)}(t) = \int_{-\infty}^{\infty}(ix)^n e^{itx}F(dx).\]
+  * Corollary 1: If $F$ has finite absolute moment of order $n \in \mathbb{Z}^+$, then $\varphi$ has the following expansion in a neighborhood of $0$: \[\varphi(t) = \sum_{k = 0}^n \frac{i^k}{k!}m^{(k)}t^k + o(|t|^n) = \sum_{k = 0}^{n-1} \frac{i^k}{k!}m^{(k)}t^k + \frac{\theta_n(t)}{n!}\mu^{(n)}|t|^n,\] where $|\theta_n(t)| \leq 1$. 
+  * Proposition 13.3: If $\varphi$ has a finite derivative of _even_ order $n$ at $t = 0$, then $F$ has a finite moment of order $n$. 
+    
+    * Note: with Proposition 13.2 this means that if a CF's _even_ order derivative exists at 0, then it exists everywhere.
+  * Symmetric derivative formula: \[\varphi^{(k+2)}(t) = \lim_{h\rightarrow 0} \frac{\varphi(t+h)^{(k)} - 2\varphi^{(k)}(t) + \varphi^{(k)}(t-h)}{h^2}.\]
+  * Note: \[\sin(t) = \frac{e^{it} - e^{-it}}{2i} \text{  and  } \cos(t) = \frac{e^{it} + e^{-it}}{2}.\]
+  * Definition of a complex valued function being positive definite.
+  * Theorem 13.2: The function $\varphi$ is a characteristic function iff it is positive definite and is continuous at 0 with $\varphi(0) = 1$. 
   
+### Note set 7: 
+
+  * Define the set of continuity points for a distribution function $C_F = \{x: F(\cdot) \text{ is continuous at } x\}$.
+  * Proposition 14.1: If $X_n \rightarrow X$ i.p., then $\lim_{n\rightarrow\infty}F_n(x) = F(x)$ for all $x \in C_F$. 
+  
+    * Note: the other direction is _very_ false. 
+    
+  * Corollary: If $X_n \rightarrow X$ i.p., then $\{x: \lim_{n\rightarrow\infty}F_n(x) = F(x)\}$ is dense (in $\mathbb{R}$). 
+  * Definition: A sequence of distribution functions $F_n$ **converges weakly** to the distribution function $F$ if \[\lim_{n\rightarrow\infty}F_n(x) = F(x) \text{ for all } x \in C_F,\] or equivalently, \[\lim_{n\rightarrow\infty}\mu_n((-\infty, x])) = \mu(-\infty, x])) \text{ for all } x \in C_F.\]
+  
+    * Note: by Proposition 14.1 this means converge i.p. implies $F_n$'s converge weakly. 
+    * When $F_n \rightarrow F$ weakly, we say $X_n \rightarrow X$ **in distribution**. 
+    
+  * Proposition 14.2: Suppose that $X_n \rightarrow c$ in distribution as $n\rightarrow\infty$, where $c\in\mathbb{R}$. Then $X \rightarrow c$ i.p. (but not necessarily a.s.). 
+  * Proposition 14.3: If $X_n \rightarrow X$ in distribution, then there exists a p.s. $(\Omega, \mathcal{F}, P)$ and RVs $X_n', n = 1,2,...$ and $X'$ defined on $(\Omega, \mathcal{F}, P)$ and having the same distribution functions as $X_n$ and $X$ such that $X_n' \rightarrow X'$ a.s. as $n\rightarrow\infty$. 
+  * Proposition 14.4: The sequence of distribution functions $F_n$ converge weakly to $F$ iff for each bounded, continuous function $g$ on $\mathbb{R}$, \[\lim_{n\rightarrow\infty}\int_{-\infty}^{\infty}g(x)F_n(dx) = \int_{-\infty}^{\infty}g(x)F(dx).\]
   
   
   
